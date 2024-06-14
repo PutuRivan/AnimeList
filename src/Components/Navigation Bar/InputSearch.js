@@ -23,7 +23,7 @@ const InputSearch = () => {
         <div className="relative">
             <input
                 placeholder="Cari Anime..."
-                className="p-2 rounded-xl w-full text-black bg-color-white"
+                className="p-2 rounded-xl w-full text-black bg-color-white text-color-EerieBlack"
                 ref={searchRef}
                 onKeyDown={handleSearch}
             />

@@ -1,3 +1,5 @@
+"use client"
+
 import VideoPlayer from "@/Components/Utils/VideoPlayer"
 import { getAnime } from "@/Libs/ApiLibs"
 

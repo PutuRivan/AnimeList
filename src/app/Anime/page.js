@@ -8,10 +8,10 @@ import React, { useEffect, useState } from 'react'
 
 const page = async () => {
     const [page, setPage] = useState(1)
-    const [topAnime, setTopAnime] = useState([])
+    const [Anime, setAnime] = useState([])
     const fetchData = async () => {
-        const populerAnime = await getAnime("top/anime", `page=${page}&&limit=24`)
-        setTopAnime(populerAnime)
+        const populerAnime = await getAnime("anime", `page=${page}&&limit=24`)
+        setAnime(populerAnime)
     }
 
     useEffect(() => {
@@ -21,10 +21,10 @@ const page = async () => {
     return (
         <>
             <HeaderPagination title={`Populer Anime #${page}`} />
-            <Card api={topAnime} />
+            <Card api={Anime} />
             <Pagination
                 page={page}
-                lastPage={topAnime.pagination?.last_visible_page}
+                lastPage={Anime.pagination?.last_visible_page}
                 setPage={setPage}
             />
         </>

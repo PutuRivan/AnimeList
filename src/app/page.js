@@ -16,7 +16,7 @@ const Home = async () => {
         <Card api={recomended} />
       </section>
       <section>
-        <Header title="Top Anime" linkTitle={"See More"} linkHref={"/Populer"} />
+        <Header title="Top Anime" linkTitle={"See More"} linkHref={"/Popular"} />
         <Card api={topAnime} />
       </section>
       <section>

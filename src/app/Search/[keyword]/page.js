@@ -1,13 +1,11 @@
-import Card from "@/Components/AnimeList/Card"
-import Header from "@/Components/AnimeList/Header"
+import Card from "@/Components/Anime/Card"
+import Header from "@/Components/Anime/Header"
 import { getAnime } from "@/Libs/ApiLibs"
 
 const page = async ({ params }) => {
-    const { keywords } = params
-
-    const decodedKeyword = decodeURI(keywords)
+    const { keyword } = params
+    const decodedKeyword = decodeURI(keyword)
     const searchAnime = await getAnime("anime", `q=${decodedKeyword}`)
-
     return (
         <>
             <Header title={`Pencarian Untuk ${decodedKeyword}...`} />

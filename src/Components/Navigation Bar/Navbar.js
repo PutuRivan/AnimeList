@@ -9,7 +9,7 @@ const Navbar = () => {
                 <div className="flex justify-center">
                     <Link 
                     href={"/"} 
-                    className="text-2xl text-neutral-content font-bold">Anime List</Link>
+                    className="text-2xl text-color-white font-bold">Anime List</Link>
                 </div>
                 <div className="">
                     <InputSearch/>

@@ -6,13 +6,13 @@ import { Heart, Star } from "@phosphor-icons/react";
 
 const Card = ({ api }) => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 mt-5 md:gap-10 lg:gap-5 gap-5 place-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 mt-5 md:gap-10 lg:gap-5 gap-5 place-items-center">
             {api.data === undefined ? (
                 <Skeleton />
             ) :
                 api.data?.map((item) => (
                     <Link
-                        to={`/Details/${item.mal_id}`}
+                        href={`/Details/${item.mal_id}`}
                         key={item.mal_id}
                         className="wrapper mt-5 lg:mt-0"
                     >

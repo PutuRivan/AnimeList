@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Skeleton from './Skeleton'
 import { Heart, Star } from "@phosphor-icons/react";
-import "@/app/card.css"
+import "@/app/Card.css"
 const Card = ({ api }) => {
     return (
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 mt-5 md:gap-10 lg:gap-5 gap-5 sm:place-items-center">

@@ -19,7 +19,7 @@ const Card = ({ api }) => {
                         <div className="card">
                             <img src={item.images.webp.image_url} alt="" />
                             <div className="info mx-10">
-                                <h1 className="text-center text-lg font-bold text-white">
+                                <h1 className="text-center text-lg font-bold text-color-white">
                                     {item.title}
                                 </h1>
                                 <div className="flex justify-between gap-3">

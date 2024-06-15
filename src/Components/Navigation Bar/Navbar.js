@@ -4,7 +4,7 @@ import InputSearch from "./InputSearch"
 
 const Navbar = () => {
     return (
-        <div className="bg-base-300 p-5 px-10">
+        <div className="bg-color-EerieBlack p-5 px-10">
             <div className="flex flex-col gap-3 lg:flex-row justify-between">
                 <div className="flex justify-center">
                     <Link 

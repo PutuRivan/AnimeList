@@ -8,7 +8,6 @@ const Home = async () => {
   let recomended = await getNestedAnimeResponse("recommendations/anime", "entry")
   recomended = reproduce(recomended, 5)
 
-
   return (
     <div className="mt-5 mx-8">
       <section>

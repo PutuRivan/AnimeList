@@ -1,42 +1,37 @@
 "use client"
 
+import { Heart, Star } from '@phosphor-icons/react'
 import Link from 'next/link'
-import Skeleton from './Skeleton'
-import { Heart, Star } from "@phosphor-icons/react";
-import "@/app/Card.css"
 const Card = ({ api }) => {
     return (
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 mt-5 md:gap-10 lg:gap-5 gap-5 sm:place-items-center">
-            {api.data === undefined ? (
-                <Skeleton />
-            ) :
-                api.data?.map((item) => (
-                    <Link
-                        href={`/Details/${item.mal_id}`}
-                        key={item.mal_id}
-                        className="wrapper mt-5 lg:mt-0"
-                    >
-                        <div className="card">
-                            <img src={item.images.webp.image_url} alt="" />
-                            <div className="info mx-10">
-                                <h1 className="text-center text-lg font-bold text-color-white">
-                                    {item.title}
-                                </h1>
-                                <div className="flex justify-between gap-3">
-                                    <div className="flex gap-1 items-center justify-center">
-                                        <Star size={15} fill="#FFC107" />
-                                        <p className="mb-2">{item.score}</p>
-                                    </div>
-                                    <div className="flex gap-1 items-center justify-center">
-                                        <Heart size={15} fill="red" />
-                                        <p className="mb-2">{item.favorites}</p>
-                                    </div>
-                                </div>
-                            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 place-items-center mt-5">
+            {api.data?.map((item) => (
+                <div
+                    key={item.mal_id}
+                    href={`/Details/${item.mal_id}`}
+                    className="card card-compact w-96  shadow-xl">
+                    <figure><img src={item.images.webp.image_url} alt={item.images.jpg.image_url} /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title">{item.title}</h2>
+                        {item.score ?
+                            <div className="flex flex-col gap-3">
+                                <span className="flex gap-1">
+                                    <Star size={24} fill="#FFC107" />
+                                    {item.score}
+                                </span>
+                                <span className="flex gap-1">
+                                    <Heart size={24} fill="red" />
+                                    <p className="mb-2">{item.favorites}</p>
+                                </span>
+
+                            </div> : null
+                        }
+                        <div className="card-actions justify-end">
+                            <Link href={`/Details/${item.mal_id}`} className="btn btn-primary btn-outline">See More</Link>
                         </div>
-                    </Link>
-                ))
-            }
+                    </div>
+                </div>
+            ))}
 
         </div>
     )

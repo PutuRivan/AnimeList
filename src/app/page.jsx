@@ -3,10 +3,10 @@ import Header from "@/Components/Anime/Header";
 import { getAnime, getNestedAnimeResponse, reproduce } from "@/Libs/ApiLibs";
 
 const Home = async () => {
-  const topAnime = await getAnime("top/anime", "limit=10")
-  const Anime = await getAnime("anime", "limit=10")
+  const topAnime = await getAnime("top/anime", "limit=9")
+  const Anime = await getAnime("anime", "limit=9")
   let recomended = await getNestedAnimeResponse("recommendations/anime", "entry")
-  recomended = reproduce(recomended, 5)
+  recomended = reproduce(recomended, 6)
 
   return (
     <div className="mt-5 mx-8">

@@ -1,5 +1,6 @@
 "use client"
 
+import { MagnifyingGlass } from '@phosphor-icons/react'
 import { useRouter } from 'next/navigation'
 import { useRef } from 'react'
 
@@ -23,17 +24,14 @@ const InputSearch = () => {
         <div className="relative">
             <input
                 placeholder="Cari Anime..."
-                className="p-2 rounded-xl w-full text-black bg-color-white text-color-EerieBlack"
+                className="p-2 rounded-xl w-full bg-base-100 border-base-100"
                 ref={searchRef}
                 onKeyDown={handleSearch}
             />
             <button 
             onClick={handleSearch}
             className="absolute inset-y-0 right-0 flex items-center pr-3">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="#000000" viewBox="0 0 256 256">
-                    <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z">
-                    </path>
-                </svg>
+                <MagnifyingGlass size={30} fill="gray" />
             </button>
         </div>
     )

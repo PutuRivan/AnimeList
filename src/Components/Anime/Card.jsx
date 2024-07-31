@@ -9,10 +9,10 @@ const Card = ({ api }) => {
                 <div
                     key={item.mal_id}
                     href={`/Details/${item.mal_id}`}
-                    className="card card-compact w-96  shadow-xl">
-                    <figure><img src={item.images.webp.image_url} alt={item.images.jpg.image_url} /></figure>
+                    className="card card-compact h-full w-96 bg-base-300 shadow-2xl">
+                    <figure className='w-full'><img src={item.images.webp.image_url} alt={item.images.jpg.image_url} /></figure>
                     <div className="card-body">
-                        <h2 className="card-title">{item.title}</h2>
+                        <h2 className="card-title text-accent">{item.title}</h2>
                         {item.score ?
                             <div className="flex flex-col gap-3">
                                 <span className="flex gap-1">
@@ -27,7 +27,7 @@ const Card = ({ api }) => {
                             </div> : null
                         }
                         <div className="card-actions justify-end">
-                            <Link href={`/Details/${item.mal_id}`} className="btn btn-primary btn-outline">See More</Link>
+                            <Link href={`/Details/${item.mal_id}`} className="btn btn-primary">See More</Link>
                         </div>
                     </div>
                 </div>

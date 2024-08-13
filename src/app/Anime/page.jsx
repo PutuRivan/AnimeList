@@ -1,6 +1,6 @@
 "use client";
 
-import Card from "@/Components/Anime/Cards";
+import Cards from "@/Components/Anime/Cards";
 import HeaderPagination from "@/Components/Utils/HeaderPagination";
 import Pagination from "@/Components/Utils/Pagination";
 import { getAnime } from "@/lib/ApiLibs";
@@ -21,7 +21,7 @@ const page = async () => {
   return (
     <>
       <HeaderPagination title={`Populer Anime #${page}`} />
-      <Card api={Anime} />
+      <Cards api={Anime} />
       <Pagination
         page={page}
         lastPage={Anime.pagination?.last_visible_page}

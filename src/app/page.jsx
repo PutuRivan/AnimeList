@@ -1,6 +1,6 @@
 import Header from "@/Components/Anime/Header";
 import { getAnime, getNestedAnimeResponse, reproduce } from "@/lib/ApiLibs";
-import Cards from "@/Components/Anime/Cards";
+import Cards from "@/Components/Anime/CarouselCards";
 
 const Home = async () => {
   const topAnime = await getAnime("top/anime", "limit=12");

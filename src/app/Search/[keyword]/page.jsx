@@ -1,4 +1,4 @@
-import Card from "@/Components/Anime/Cards";
+import Cards from "@/Components/Anime/Cards";
 import Header from "@/Components/Anime/Header";
 import { getAnime } from "@/lib/ApiLibs";
 
@@ -9,7 +9,7 @@ const page = async ({ params }) => {
   return (
     <>
       <Header title={`Pencarian Untuk ${decodedKeyword}...`} />
-      <Card api={searchAnime} />
+      <Cards api={searchAnime} />
     </>
   );
 };

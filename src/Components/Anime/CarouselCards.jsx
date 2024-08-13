@@ -1,24 +1,10 @@
 "use client";
 
 import * as React from "react";
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-  } from "@/components/ui/carousel";
-  
-  import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "../ui/card";
 import { Heart, Star } from "@phosphor-icons/react";
 import Link from "next/link";
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "../ui/card";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "../ui/carousel";
 const CarouselCards = ({ api }) => {
   return (
     <Carousel className="w-full pl-10">

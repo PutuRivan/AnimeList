@@ -1,29 +1,36 @@
-import Card from "@/Components/Anime/Card";
 import Header from "@/Components/Anime/Header";
-import { getAnime, getNestedAnimeResponse, reproduce } from "@/Libs/ApiLibs";
+import { getAnime, getNestedAnimeResponse, reproduce } from "@/lib/ApiLibs";
+import Cards from "@/Components/Anime/Cards";
 
 const Home = async () => {
-  const topAnime = await getAnime("top/anime", "limit=9")
-  const Anime = await getAnime("anime", "limit=9")
-  let recomended = await getNestedAnimeResponse("recommendations/anime", "entry")
-  recomended = reproduce(recomended, 6)
+  const topAnime = await getAnime("top/anime", "limit=12");
+  const Anime = await getAnime("anime", "limit=12");
+  let recomended = await getNestedAnimeResponse(
+    "recommendations/anime",
+    "entry"
+  );
+  recomended = reproduce(recomended, 12);
 
   return (
-    <div className="mt-5 mx-8">
+    <div className="mx-10">
       <section>
         <Header title="Recomended Anime" />
-        <Card api={recomended} />
+        <Cards api={recomended} />
       </section>
       <section>
-        <Header title="Top Anime" linkTitle={"See More"} linkHref={"/Popular"} />
-        <Card api={topAnime} />
+        <Header
+          title="Top Anime"
+          linkTitle={"See More"}
+          linkHref={"/Popular"}
+        />
+        <Cards api={topAnime} />
       </section>
       <section>
         <Header title="Anime" linkTitle={"See More"} linkHref={"/Anime"} />
-        <Card api={Anime} />
+        <Cards api={Anime} />
       </section>
     </div>
   );
-}
+};
 
-export default Home
+export default Home;
